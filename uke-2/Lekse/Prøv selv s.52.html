@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv s.52</title>
+<body>
+<main>
+
+    <script>
+
+        let by = "Sandvika";
+        document.write(by);
+
+        let fornavn = "Geir";
+        let etternavn = "Hansen";
+        document.write(`<br>Hei, ${fornavn}, ditt etternavn er ${etternavn}<br>`);
+
+        let egetNavn = prompt("Hva heter du?");
+        document.write("Velkommen "+egetNavn);
+
+        document.write(`<br>Hei, ${egetNavn}, du er invitert til bursdagsfest.<br>
+         ${egetNavn} har tillatelse å komme, ${egetNavn} er navnet ditt og<br>
+         ${egetNavn} skal komme til festen. ${egetNavn}<br>`);
+
+        let sub1= prompt("Skriv et subjektiv");
+        let navn = prompt("Skriv et navn");
+        let adj2 = prompt("Skriv et adjektiv");
+        let adj3 = prompt("Skriv enda et adjektiv");
+        let adj4 = prompt("Skriv enda et adjektiv");
+        let adj5 = prompt("Skriv enda et adjektiv");
+        let adj6 = prompt("Skriv enda et adjektiv");
+
+        document.write(`<br><br>Hei ${egetNavn}, din ${sub1}.<br>
+        Hvordan går det med den ${adj2}e, ${adj3}e elefanten din?<br>
+        du burde ta den med til ${navn}s ${adj4}e bilvask,<br>
+        så blir den ${adj5} og fin.<br>
+        Hilsen en ${adj6} person.<br>`);
+
+    </script>
+</main>
+</body>
+</html>
