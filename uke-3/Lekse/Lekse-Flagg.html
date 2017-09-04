@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lekse</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+        }
+        body {
+            margin: 0;
+        }
+
+        #minCanvas {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<canvas id="minCanvas" height="100px" width="200px"></canvas>
+<script>
+
+    var minCanvas = document.getElementById("minCanvas");
+    var ctx = minCanvas.getContext("2d");
+
+    var bredde = innerWidth; //Bredden på nettleserern
+    var hoyde = innerHeight; //Høyden på nettleseren
+
+    minCanvas.width = bredde;
+    minCanvas.height = hoyde;
+
+    function flagg() {
+        var x = Math.random()*bredde;
+        var y = Math.random()*hoyde;
+
+        ctx.beginPath();
+            ctx.fillStyle = "#ef2b2d";
+            ctx.rect(x,y,220,160);
+            ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+            ctx.fillStyle = "white";
+            ctx.rect(x+60,y,40,160);
+            ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+            ctx.fillStyle = "white";
+            ctx.rect(x,y+60,220,40);
+            ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.fillStyle = "#002868";
+        ctx.rect(x+70,y,20,160);
+        ctx.fill();
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.fillStyle = "#002868";
+        ctx.rect(x,y+70,220,20);
+        ctx.fill();
+        ctx.closePath();
+
+    }
+
+    setInterval(flagg,0.1);
+    document.onclick = function () {
+        ctx.beginPath();
+        ctx.closePath();
+    }
+
+
+</script>
+</body>
+</html>
