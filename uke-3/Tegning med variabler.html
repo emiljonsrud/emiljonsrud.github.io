@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Definitivt</title>
+    <style>
+        #minCanvas
+    </style>
+</head>
+<body>
+<main>
+
+    <canvas id="minCanvas" width="1920" height="1080"></canvas>
+
+    <script>
+
+        var minCanvas = document.getElementById("minCanvas");
+        var ctx = minCanvas.getContext("2d");
+
+        function draw() {
+
+            //Startposisjoner for hodet
+            var x = Math.random()*1920;
+            var y = Math.random()*1080;
+            //Tegner hodet
+            ctx.fillStyle = `hsl(${Math.random()*360}, 100%, 50%)`;
+            ctx.fillRect(x,y,50,50);
+            //Tegner øyner
+            ctx.fillStyle = "blue";
+            ctx.fillRect(x+10, y+10, 5, 5);
+            ctx.fillRect(x+36,y+10, 5, 5);
+            //Tegner munnen
+            ctx.fillRect(x+10, y+30, 30,5);
+        }
+
+        setInterval(draw, 0.1);
+
+
+    </script>
+</main>
+</body>
+</html>
