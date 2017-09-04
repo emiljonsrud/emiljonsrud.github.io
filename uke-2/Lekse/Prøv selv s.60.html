@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv s.60</title>
+</head>
+<body>
+<main>
+
+    <script>
+        document.write("Oppgave 1<br>");
+        let hoyde = prompt("Skriv høyden");
+        let bredde = prompt("Skriv bredde");
+
+        // Jeg regner ut omkrets og areal og lager nye vaiabler for dem
+        let areal = Number(hoyde)*Number(bredde);
+        let omkrets = (Number(hoyde)+Number(bredde))*2;
+
+        // Jeg skriver Arealet og omkretsen
+        document.write(`Arealet er ${areal}`);
+        document.write(`<br>Omkretsen er ${omkrets}`);
+
+
+        document.write("<br>");
+        document.write("<br>Oppgave 2<br>");
+        let terning = Math.random()*5+1;
+        document.write("Terningen sier: ");
+        document.write(terning.toFixed());
+
+        let terning1 = Math.random()*10;
+        document.write("<br>Tall mellom 0 til 10: ");
+        document.write(terning1.toFixed());
+
+        let terning2 = Math.random()*10+10;
+        document.write("<br>Tall fra 10 til 20: ");
+        document.write(terning2.toFixed());
+
+
+        document.write("<br>");
+        document.write("<br>Oppgave 3");
+        let r = prompt("Hva er radien til kulen?");
+        r = Number(r);//gjør om r fra string til number
+        document.write("<br>Omkretsen: ");
+        let omkretsKule = Math.PI * 2 * r;
+        document.write(omkretsKule.toFixed(2));
+
+        document.write("<br>Volumet: ");
+        let volum = 4 * Math.PI * r^3;
+        document.write(volum.toFixed(2));
+
+        document.write("<br>Arealet av kulens overflate: ");
+        let overflate = Math.PI*4*r^2;
+        document.write(overflate.toFixed(2));
+
+
+        document.write("<br>");
+        document.write("<br>");
+        document.write("Oppgave 4<br>");
+
+        let antallPoeng = prompt("Hvor mange poeng fikk du?");
+        let muligePoeng = prompt("Hvor mange poeng var det mulig å få?");
+
+        document.write(`Dine poeng: ${antallPoeng}`);
+        document.write("<br>");
+        document.write(`Mulige poeng: ${muligePoeng}`);
+        document.write("<br>");
+        let karakter = (Number(antallPoeng)/Number(muligePoeng))*6;
+        document.write(`Karakter: ${karakter.toFixed()}`);
+        document.write("<br>");
+
+        document.write("<br>");
+        document.write("Oppgave 5<br>");
+        let personVekt = prompt("Hvor mye veier du? (oppgitt i kg)");
+        let personHoyde = prompt("Hvor høy er du? (oppgitt i meter)");
+        let KMI = Number(personVekt/(Number(personHoyde))^2);
+
+        document.write("Din KMI: ");
+        document.write(KMI.toFixed(2));
+
+
+    </script>
+</main>
+</body>
+</html>
