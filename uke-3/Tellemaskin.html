@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tellemaskin</title>
+
+    <style>
+
+        body{
+            display: grid;
+            grid-template-columns: repeat(50, 1fr);
+            background-color: black;
+        }
+        div {
+            flex: 1;
+            color: yellow;
+        }
+
+    </style>
+
+</head>
+<body>
+<main>
+
+    <script>
+
+        var x = 0;
+        var tekst = `Dette er derfor en forkortelse av Nephis folks opptegnelser og
+også av lamanittenes — skrevet til lamanittene, som er en levning
+av Israels hus, og også til jøde og hedning — skrevet på befaling
+og også ved profetiens og åpenbaringens ånd — skrevet og forseglet
+og skjult ved Herren for at den ikke skulle ødelegges — for
+å komme frem ved Guds gave og kraft og bli oversatt — forseglet
+ved Moronis hånd og trygt skjult ved Herren, for, når tiden var
+inne, å komme frem gjennom hedningefolkene — oversatt ved
+Guds gave.
+Likeså en forkortelse tatt fra Ethers bok, som er en opptegnelse
+om Jareds folk som ble adspredt på den tid da Herren forvirret
+folkets språk da de bygget et tårn for å nå opp til himmelen — for
+å vise levningen av Israels hus de store ting Herren har gjort for
+deres fedre, og for at de kan kjenne Herrens pakter og vite at de
+ikke for alltid er forkastet — og også for å overbevise jøde og
+hedning om at Jesus er Kristus, den Evige Gud, som åpenbarer
+seg for alle nasjoner — og hvis det skulle finnes feil, er de av
+mennesker. Fordøm derfor ikke det som er av Gud, så dere kan
+finnes plettfrie for Kristi domstol.`;
+
+
+
+        function skriv() {
+
+            //Lager et div-element med en bokstav
+            var div = document.createElement("div");
+            div.innerHTML = tekst[x];
+            document.body.appendChild(div);
+            //Legger div element inn i body
+
+
+            div.style.transform = `scale( ${Math.random()*3} )`;
+            //Øker x med 1
+            x++;
+
+        }
+
+        setInterval(skriv, 0.00001);
+
+    </script>
+</main>
+</body>
+</html>
