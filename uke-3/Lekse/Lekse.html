@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lekse</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+        }
+        body {
+            margin: 0;
+        }
+
+        #minCanvas {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="minCanvas" height="100px" width="200px"></canvas>
+    <script>
+
+        var minCanvas = document.getElementById("minCanvas");
+        var ctx = minCanvas.getContext("2d");
+
+        var bredde = innerWidth; //Bredden på nettleserern
+        var hoyde = innerHeight; //Høyden på nettleseren
+
+        minCanvas.width = bredde;
+        minCanvas.height = hoyde;
+
+        function tegn() {
+            var x = Math.random()*bredde;
+            var y = Math.random()*hoyde;
+            var r = Math.random()*200+100;
+
+
+            ctx.beginPath();
+                ctx.fillStyle = `hsla(${Math.random()*360}, 100%, 50%, 0.4)`;
+                ctx.arc(x, y, r, 0, Math.PI*2);
+                ctx.fill();
+
+            ctx.closePath();
+            ctx.beginPath();
+                ctx.fillStyle = `hsla(${Math.random()*360}, 100%, 50%, 0.4)`;
+                ctx.arc(x-r*2/5,y-r*2/5,r/5,0,Math.PI*2);
+                ctx.arc(x+r*2/5,y-r*2/5,r/5,0,Math.PI*2);
+                ctx.fill();
+            ctx.closePath();
+            ctx.beginPath();
+                ctx.fillStyle = `hsla(${Math.random()*360}, 100%, 50%, 0.4)`;
+                ctx.arc(x,y,r/3,0,Math.PI);
+                ctx.fill();
+            ctx.closePath();
+        }
+
+        setInterval(tegn, 100);
+
+    </script>
+</body>
+</html>
