@@ -37,25 +37,25 @@
 
 
             ctx.beginPath();
-                ctx.fillStyle = `hsla(${Math.random()*360}, 100%, 50%, 0.4)`;
+                ctx.fillStyle = `hsla(${Math.random()*360}, 100%, 50%, 0.5)`;
                 ctx.arc(x, y, r, 0, Math.PI*2);
                 ctx.fill();
 
             ctx.closePath();
             ctx.beginPath();
-                ctx.fillStyle = `hsla(${Math.random()*360}, 100%, 50%, 0.4)`;
+                ctx.fillStyle = `hsla(${Math.random()*360}, 100%, 50%, 0.7)`;
                 ctx.arc(x-r*2/5,y-r*2/5,r/5,0,Math.PI*2);
                 ctx.arc(x+r*2/5,y-r*2/5,r/5,0,Math.PI*2);
                 ctx.fill();
             ctx.closePath();
             ctx.beginPath();
-                ctx.fillStyle = `hsla(${Math.random()*360}, 100%, 50%, 0.4)`;
-                ctx.arc(x,y,r/3,0,Math.PI);
+                ctx.fillStyle = `hsla(${Math.random()*360}, 100%, 50%, 0.7)`;
+                ctx.arc(x,y,r*3/5,0,Math.PI);
                 ctx.fill();
             ctx.closePath();
         }
 
-        setInterval(tegn, 100);
+        setInterval(tegn, 10);
 
     </script>
 </body>
