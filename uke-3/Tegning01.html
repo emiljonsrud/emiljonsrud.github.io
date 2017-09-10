@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #minCanvas {
+            background-color: aquamarine;
+        }
+    </style>
+
+
+</head>
+<body>
+<main>
+   <canvas id="minCanvas" width="5000px" height="6000px">
+
+   </canvas>
+
+    <script>
+        var minCancas = document.getElementById("minCanvas");
+        var ctx = minCanvas.getContext("2d");
+
+        //Tegne et fjes
+        ctx.fillStyle = "blue";
+        ctx.fillRect(200, 400, 1000, 500);
+        ctx.fillStyle = "orange";
+        ctx.fillRect(300, 500, 100, 100);
+        ctx.fillRect(1000,500,100, 100);
+        ctx.fillRect(300, 700, 800, 100);
+
+        //Tegne en runding
+        ctx.arc(3000, 1000, 500, 0, Math.PI*2);
+        ctx.stroke();
+        ctx.fill();
+
+        //Tegne streker
+        //Flytter pennen
+        ctx.moveTo(3000, 2000);
+        ctx.lineTo(1000, 2000);
+        ctx.strokeStyle = "pink";
+        ctx.stroke();
+
+    </script>
+</main>
+</body>
+</html>
