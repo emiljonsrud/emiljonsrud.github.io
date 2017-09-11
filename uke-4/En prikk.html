@@ -26,28 +26,28 @@
 
         var xpos = 100;
         var ypos = 100;
-        var r = 6;
+        var r = 40;
 
         var xretning = 1;
         var yretning = -1;
-        var xfart = 12;
+        var xfart = 11;
         var yfart = 1;
         var krymp = false;
         var h = 0;
-        var h2 = 180;
+        var h2 = 10;
 
 
         function tegnprikk() {
 
 
-            ctx.fillStyle = `hsla(${h}, 100%, 50%, 0.1)`;
+            ctx.fillStyle = `hsla(${h}, 100%, 50%, 0.3)`;
             h++;
 
             ctx.beginPath();
             ctx.arc(xpos,ypos,r, 0, Math.PI*2);
             ctx.fill();
             ctx.stroke();
-            ctx.strokeStyle=`hsl(${h}, 100%, 50%)`;
+            ctx.strokeStyle=`hsl(${h2}, 100%, 60%)`;
             h2++;
 
             ctx.closePath();
@@ -57,7 +57,7 @@
             xpos = xpos+xfart*xretning;
             ypos = ypos+yfart*(Math.sin(yretning));
 
-            if (yfart === 25) {
+            if (yfart === 20) {
                 fartstigning = true;
             }
             if (yfart === 1) {
@@ -79,10 +79,10 @@
 
 
 
-            if (r > 100) {
+            if (r > 90) {
                 krymp = true;
             }
-            if (r < 5) {
+            if (r < 40) {
                 krymp = false;
             }
 
