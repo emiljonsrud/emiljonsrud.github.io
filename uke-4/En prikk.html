@@ -8,7 +8,7 @@
             margin: 0;
         }
         #canvas {
-            background-color: black;
+            background-color: white;
         }
 
     </style>
@@ -30,8 +30,8 @@
 
         var xretning = 1;
         var yretning = -1;
-        var xfart = 4;
-        var yfart = 3;
+        var xfart = 12;
+        var yfart = 1;
         var krymp = false;
         var h = 0;
         var h2 = 180;
@@ -40,7 +40,7 @@
         function tegnprikk() {
 
 
-            ctx.fillStyle = `hsla(${h}, 100%, 50%, 0.05)`;
+            ctx.fillStyle = `hsla(${h}, 100%, 50%, 0.1)`;
             h++;
 
             ctx.beginPath();
@@ -52,8 +52,22 @@
 
             ctx.closePath();
 
+
+
             xpos = xpos+xfart*xretning;
-            ypos = ypos+yfart*yretning;
+            ypos = ypos+yfart*(Math.sin(yretning));
+
+            if (yfart === 25) {
+                fartstigning = true;
+            }
+            if (yfart === 1) {
+                fartstigning = false;
+            }
+            if (fartstigning) {
+                yfart--;
+            } else {
+                yfart++;
+            }
 
             if (ypos <= 0 || ypos >= innerHeight) {
                 yretning = yretning*(-1);
@@ -68,7 +82,7 @@
             if (r > 100) {
                 krymp = true;
             }
-            if (r < 20) {
+            if (r < 5) {
                 krymp = false;
             }
 
@@ -80,7 +94,7 @@
 
         }
 
-        setInterval(tegnprikk, 0.1)
+        setInterval(tegnprikk, 1)
 
     </script>
 
