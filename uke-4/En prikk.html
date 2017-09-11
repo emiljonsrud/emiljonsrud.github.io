@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>En prikk</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        #canvas {
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+
+    <canvas id="canvas" width="100" height="100"></canvas>
+
+    <script>
+
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+
+        var xpos = 100;
+        var ypos = 100;
+        var r = 6;
+
+        var xretning = 1;
+        var yretning = -1;
+        var xfart = 4;
+        var yfart = 3;
+        var krymp = false;
+        var h = 0;
+
+
+        function tegnprikk() {
+
+
+            ctx.fillStyle = `hsl(${h}, 100%, 50%)`;
+            h++;
+
+            ctx.beginPath();
+            ctx.arc(xpos,ypos,r, 0, Math.PI*2);
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+
+            xpos = xpos+xfart*xretning;
+            ypos = ypos+yfart*yretning;
+
+            if (ypos <= 0 || ypos >= innerHeight) {
+                yretning = yretning*(-1);
+            }
+            if (xpos <= 0 || xpos >= innerWidth) {
+                xretning = xretning*-1;
+            }
+
+
+
+
+            if (r > 250) {
+                krymp = true;
+            }
+            if (r < 20) {
+                krymp = false;
+            }
+
+            if(krymp) {
+                r--;
+            } else {
+                r++;
+            }
+
+        }
+
+        setInterval(tegnprikk, 0.00001)
+
+    </script>
+
+
+
+
+</body>
+</html>
