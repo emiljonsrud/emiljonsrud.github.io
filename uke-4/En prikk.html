@@ -34,18 +34,22 @@
         var yfart = 3;
         var krymp = false;
         var h = 0;
+        var h2 = 180;
 
 
         function tegnprikk() {
 
 
-            ctx.fillStyle = `hsl(${h}, 100%, 50%)`;
+            ctx.fillStyle = `hsla(${h}, 100%, 50%, 0.05)`;
             h++;
 
             ctx.beginPath();
             ctx.arc(xpos,ypos,r, 0, Math.PI*2);
             ctx.fill();
             ctx.stroke();
+            ctx.strokeStyle=`hsl(${h}, 100%, 50%)`;
+            h2++;
+
             ctx.closePath();
 
             xpos = xpos+xfart*xretning;
@@ -61,7 +65,7 @@
 
 
 
-            if (r > 250) {
+            if (r > 100) {
                 krymp = true;
             }
             if (r < 20) {
@@ -76,7 +80,7 @@
 
         }
 
-        setInterval(tegnprikk, 0.00001)
+        setInterval(tegnprikk, 0.1)
 
     </script>
 
