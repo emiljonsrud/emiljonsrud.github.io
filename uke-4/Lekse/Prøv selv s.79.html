@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lekse</title>
+</head>
+<body>
+ <script>
+
+     var sporsmal = prompt("Liker du PC eller Mac?");
+
+     if (sporsmal.toUpperCase() === "PC") {
+         document.write("Godt valg");
+     }
+     if (sporsmal.toUpperCase() === "MAC") {
+         document.write("Dyrt valg")
+     } else {
+         document.write("Tror du har missforstått")
+     }
+     document.write("<br><br>");
+
+
+     //Oppgave 2
+     var holyGrail = prompt("What is the airspeed-velocity of an unladen swallow?");
+
+     if (holyGrail.toLowerCase() === "african or european?" || holyGrail.toLowerCase() === "african or european"||
+        holyGrail.toLowerCase() === "european or african?" || holyGrail.toLowerCase() === "european or african"){
+         document.write("Du svarte riktig!")
+     } else {
+         document.write(`Du svarte feil, <a href="http://www.imdb.com/title/tt0071853/">se Monty Python & The Holy Grail<a></a>`)
+     }
+
+
+ </script>
+</body>
+</html>
