@@ -30,7 +30,7 @@
 
         var xretning = 1;
         var yretning = -1;
-        var xfart = 11;
+        var xfart = 7;
         var yfart = 1;
         var krymp = false;
         var h = 0;
@@ -57,7 +57,7 @@
             xpos = xpos+xfart*xretning;
             ypos = ypos+yfart*(Math.sin(yretning));
 
-            if (yfart === 20) {
+            if (yfart === 7) {
                 fartstigning = true;
             }
             if (yfart === 1) {
@@ -79,10 +79,10 @@
 
 
 
-            if (r > 90) {
+            if (r > 120) {
                 krymp = true;
             }
-            if (r < 40) {
+            if (r < 10) {
                 krymp = false;
             }
 
