@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv s. 90</title>
+</head>
+<body>
+<canvas id="minCanvas" style="width: 500px; height: 500px;"></canvas>
+<br>
+
+<script>
+
+    //Oppgave 1
+    var vinner = 0;
+    var antalforsøk = 0;
+
+    while (vinner !== 10) {
+        document.write("Du vant ikke :(<br>");
+        vinner = Math.floor(Math.random()*10+1);
+        antalforsøk++;document
+    }
+    document.write("Nå vant du på:" + antalforsøk + " forsøk.");
+
+
+    //Oppgave 2
+    var minCanvas = document.getElementById("minCanvas");
+    var ctx = minCanvas.getContext("2d");
+
+    var ypos = 0;
+
+    while(ypos<500) {
+        ctx.beginPath();
+            ctx.lineTo(0,ypos);
+            ctx.strokeStyle = "pink";
+            ctx.lineTo(500, ypos);
+            ctx.stroke();
+        ctx.closePath();
+        var ypos = ypos + 5;
+    }
+
+    //Oppgave 3
+    var terningSum =0;
+    while(terningSum<50) {
+        terningSum = terningSum+Math.floor(Math.random()*6+1);
+    }
+    var i = 10;
+    while(i<30) {
+        i++
+    }
+    //Beklager, men jeg skjønner ikke hva oppgave spørr om
+
+    //Oppgave 4
+    document.write("<br>");
+    document.write("<br>");
+    var l = 0;
+    while(l<80) {
+        l = l+8;
+        document.write(l+"<br>");
+    }
+
+
+</script>
+</body>
+</html>

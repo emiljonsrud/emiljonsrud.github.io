@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prøv selv s. 87</title>
+</head>
+<body>
+<script>
+
+    var mobil = prompt("Hvilket mobilmerke har du?");
+
+    switch(mobil.toLowerCase()) {
+        case "samsung":
+            document.write("Samsung er det beste merket");
+            document.body.style.backgroundColor = "rgb(20,40,160)";
+            break;
+        case "apple":
+            document.write("Apple er et dyrt merke");
+            document.body.style.backgroundColor = "grey";
+            break;
+        case "microsoft":
+            document.write("Dette var Nokia før, men så kjøpte microsoft dem");
+            document.body.style.backgroundColor = "lime";
+            break;
+        case "sony":
+            document.write("Sony har bra kameraer..?");
+            document.body.style.backgroundColor = "yellow";
+            break;
+        default:
+            document.write("Du er enten en hipster, eller så skrev du feil");
+            document.body.style.backgroundColor = "pink";
+    }
+    document.write("<br>");
+
+
+    var rovdyr = prompt("Skriv et rovdyr fra Norge");
+
+    switch (rovdyr.toLowerCase()) {
+        case "ulv":
+            document.write("I Norge er det 33 ulver");
+            break;
+        case "jerv":
+            document.write("I Norge er det 343 jerver");
+            break;
+        case "bjørn":
+            document.write("I Norge er det 137 bjørner");
+            break;
+        case "gaupe":
+            document.write("I Norge er det 350 gauper");
+    }
+    document.write("<br>");
+
+    var bilett = prompt("Er du barn, pensjonist, ungdom eller voksen?");
+
+    switch (bilett.toLowerCase()) {
+        case "barn":
+        case "pensjonist":
+            document.write("Bilettprisen din er 20kr");
+            break;
+        case "ungdom":
+            document.write("Bilettprisen din er 25kr");
+            break;
+        case "voksen":
+            document.write("Bilettprisen din er 30kr");
+            break;
+    }
+
+
+
+</script>
+
+
+</body>
+</html>
