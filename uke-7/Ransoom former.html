@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random former</title>
+</head>
+<body>
+<canvas id="minCanvas" height="100" width="100"></canvas>
+<script>
+    var minCanvas = document.getElementById("minCanvas");
+    var ctx = minCanvas.getContext("2d");
+
+    var bredde = innerWidth; //Bredden på nettleserern
+    var hoyde = innerHeight; //Høyden på nettleseren
+
+    minCanvas.height = hoyde;
+    minCanvas.width = bredde;
+    var i = 30;
+    var b = 1;
+    var m=1
+
+
+    function tegnFormer(evt) {
+        var form = Math.random();
+
+        ctx.beginPath(evt);
+        ctx.fillStyle = `hsla(${Math.random()*360}, 100%, 50%, 0.5)`;
+        ctx.moveTo(evt.clientX+i, evt.clientY+i);
+        ctx.lineTo(evt.clientX, evt.clientY-i);
+        ctx.lineTo(evt.clientX-i, evt.clientY+i);
+        ctx.fill();
+    }
+    function mer() {
+        if(b>=4) {
+            vekst=false
+        }
+        if (b<=1){
+            vekst=true
+        }
+        if (vekst) {
+            b=b+(1/16)*b
+        }else {
+            b=b-(1/16)*b
+        }
+
+        console.log(b)
+    }
+    function shit(evt) {
+
+        if (m<360) {
+            m=m+2;
+        }else {
+            m=0
+        }
+        var n = i+(1/b)*i;
+
+        ctx.beginPath(evt);
+        ctx.strokeStyle = `hsla(${m}, 100%, 50%, 0.9)`;
+        ctx.fillStyle = `hsla(${m+10}, 100%, 50%, 0.3)`;
+        ctx.moveTo(evt.clientX, evt.clientY+n);
+
+            ctx.moveTo(evt.clientX+i, evt.clientY+i);
+
+        ctx.lineTo(evt.clientX+n, evt.clientY);
+
+            ctx.lineTo(evt.clientX+i, evt.clientY-i);
+
+        ctx.lineTo(evt.clientX, evt.clientY-n);
+
+            ctx.lineTo(evt.clientX-i, evt.clientY-i);
+
+        ctx.lineTo(evt.clientX-n, evt.clientY);
+
+            ctx.lineTo(evt.clientX-i, evt.clientY+i);
+
+        ctx.lineTo(evt.clientX, evt.clientY+n);
+
+        ctx.stroke();
+        ctx.fill();
+        mer();
+    }
+    document.onmousemove = shit;
+
+
+</script>
+</body>
+</html>
