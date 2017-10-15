@@ -45,7 +45,7 @@
 
         console.log(b)
     }
-    function shit(evt) {
+    function former(evt) {
 
         if (m<360) {
             m=m+2;
@@ -56,7 +56,7 @@
 
         ctx.beginPath(evt);
         ctx.strokeStyle = `hsla(${m}, 100%, 50%, 1)`;
-        ctx.fillStyle = `hsla(${m-90}, 100%, 50%, 0.15)`;
+        ctx.fillStyle = `hsla(${m-22.5}, 100%, 50%, 0.15)`;
         ctx.moveTo(evt.clientX, evt.clientY+n);
 
             ctx.moveTo(evt.clientX+i, evt.clientY+i);
@@ -81,7 +81,7 @@
         ctx.fill();
         mer();
     }
-    document.onmousemove = shit;
+    document.onmousemove = former;
 
 
 </script>
