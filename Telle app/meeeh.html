@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kankjse</title>
+    <style>
+
+        #tapper {
+            background-color: darkcyan;
+            width: 100vh;
+            height: 60vh;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="tapper"></div>
+<div id="teller"></div>
+
+<script>
+    var tapper = document.getElementById("tapper");
+    var teller = document.getElementById("teller");
+
+    timer=true;
+
+    var tap = 0;
+
+
+    function nedtelling() {
+        timer = false;
+        tapper.style.backgroundColor = "lightcoral";
+        console.log(timer)
+    }
+
+
+    function tell() {
+        if(timer){
+            tap++;
+            tapper.style.backgroundColor = "lightgreen";
+            console.log(tap)
+        }
+        if (tap===1){
+            setTimeout(nedtelling, 10000);
+        }
+        teller.innerHTML = `Antall klikk: ${tap}`;
+    }
+
+
+    tapper.onclick = tell;
+
+</script>
+</body>
+</html>
