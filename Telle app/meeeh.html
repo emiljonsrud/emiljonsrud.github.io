@@ -33,7 +33,15 @@
     function nedtelling() {
         timer = false;
         tapper.style.backgroundColor = "lightcoral";
-        console.log(timer)
+        console.log(timer);
+        setTimeout(resett, 4000)
+    }
+    function resett() {
+        timer = true;
+        tap=0;
+        tapper.style.backgroundColor = "darkcyan";
+        console.log(timer);
+        console.log(tap)
     }
 
 
@@ -44,7 +52,7 @@
             console.log(tap)
         }
         if (tap===1){
-            setTimeout(nedtelling, 10000);
+            setTimeout(nedtelling, 5000);
         }
         teller.innerHTML = `Antall klikk: ${tap}`;
     }
