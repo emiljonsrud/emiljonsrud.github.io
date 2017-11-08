@@ -7,7 +7,7 @@
         body {
             background-color: aquamarine;
         }
-        #anus {
+        #boks {
             width: 80%;
             height: 200px;
             align-content: center;
@@ -17,7 +17,7 @@
             padding:10%;
 
         }
-       #anus > div {
+       #boks > div {
            transform: rotateX(0deg) rotateY(0deg) translate(0, 0);
            position:absolute;
            left: 0%;
@@ -28,7 +28,7 @@
     </style>
 </head>
 <body>
-    <div id="anus">
+    <div id="boks">
         <div id="bokstav1"><img src="bilder/E.psd.svg" style="width: 100px; height: 100px"></div>
         <div id="bokstav3"><img src="bilder/O.psd.svg" style="width: 100px; height: 100px"></div>
         <div id="bokstav5"><img src="bilder/A.psd.svg" style="width: 100px; height: 100px"></div>
@@ -36,7 +36,7 @@
         <div id="bokstav4"><img src="bilder/I.psd.svg" style="width: 100px; height: 100px"></div>
     </div>
     <script>
-        var anus = document.getElementById("anus");
+        var boks = document.getElementById("boks");
 
         var bokstav1 = document.getElementById("bokstav1");
         var bokstav2 = document.getElementById("bokstav2");
@@ -45,8 +45,8 @@
         var bokstav5 = document.getElementById("bokstav5");
 
 
-        var bredde = anus.clientWidth;
-        var hoyde = anus.clientHeight;
+        var bredde = boks.clientWidth;
+        var hoyde = boks.clientHeight;
         var bildeBredde = 50;
 
 
@@ -101,7 +101,7 @@
 
         }
 
-        anus.onmousemove = dynoLogo;
+        boks.onmousemove = dynoLogo;
 
     </script>
 
