@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jes</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+        #anus {
+            width: 80%;
+            height: 200px;
+            align-content: center;
+            position: relative;
+            background-color: white;
+            margin: auto;
+            padding:10%;
+
+        }
+        #bokstav1 {
+            transform: rotateX(0deg) rotateY(0deg) translate(0, 0);
+            position:absolute;
+            left: 0%;
+            display: flex;
+        }
+        #bokstav2 {
+
+            position:absolute;
+            left: 0%;
+            display: flex;
+        }
+        #bokstav3 {
+            transform: rotateX(0deg) rotateY(0deg) translate(0, 0);
+            position:absolute;
+            left: 0%;
+            display: flex;
+        }
+        #bokstav4 {
+            transform: rotateX(0deg) rotateY(0deg) translate(0, 0);
+            position:absolute;
+            left: 0%;
+            display: flex;
+        }
+        #bokstav5 {
+            transform: rotateX(0deg) rotateY(0deg) translate(0, 0);
+            position:absolute;
+            left: 0%;
+            display: flex;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="anus">
+        <div id="bokstav1"><img src="bilder/E.psd.svg" style="width: 100px; height: 100px"></div>
+        <div id="bokstav3"><img src="bilder/O.psd.svg" style="width: 100px; height: 100px"></div>
+        <div id="bokstav5"><img src="bilder/A.psd.svg" style="width: 100px; height: 100px"></div>
+        <div id="bokstav2"><img src="bilder/NN.psd.svg" style="width: 100px; height: 100px"></div>
+        <div id="bokstav4"><img src="bilder/I.psd.svg" style="width: 100px; height: 100px"></div>
+    </div>
+    <script>
+        var anus = document.getElementById("anus");
+
+        var bokstav1 = document.getElementById("bokstav1");
+        var bokstav2 = document.getElementById("bokstav2");
+        var bokstav3 = document.getElementById("bokstav3");
+        var bokstav4 = document.getElementById("bokstav4");
+        var bokstav5 = document.getElementById("bokstav5");
+
+
+        var bredde = anus.clientWidth;
+        var hoyde = anus.clientHeight;
+        var bildeBredde = 50;
+
+
+        bokstav1.style.left = bredde*0.4-bildeBredde+"px";
+        bokstav2.style.left = bredde*0.45-bildeBredde+"px";
+        bokstav3.style.left = bredde*0.5-bildeBredde+"px";
+        bokstav4.style.left = bredde*0.55-bildeBredde+"px";
+        bokstav5.style.left = bredde*0.6-bildeBredde+"px";
+
+
+
+
+        function dynoLogo(evt) {
+            var x = evt.clientX;
+            var y = evt.clientY;
+
+            var forsyvningX = (bredde/2)-x;
+            var forsyvningY = (hoyde/2)-y;
+
+            var flipX = (0.5-(y / hoyde))*-120;
+            var flipY = (0.5-(x / bredde))*120;
+
+            var forsyvningX2 = (x-(bredde/2));
+            var forsyvningY2 = (y-(hoyde/2));
+
+            var flipX2 = (0.5-(y / hoyde))*120;
+            var flipY2 = (0.5-(x / bredde))*-120;
+
+
+            bokstav1.style.transform =
+                "rotateY(" + flipY + "deg)" +
+                "rotateX(" + flipX + "deg)" +
+                "translate(" + forsyvningX + "px," + forsyvningY + "px)";
+            bokstav3.style.transform =
+                "rotateY(" + flipY + "deg)" +
+                "rotateX(" + flipX + "deg)" +
+                "translate(" + forsyvningX + "px," + forsyvningY + "px)";
+            bokstav5.style.transform =
+                "rotateY(" + flipY + "deg)" +
+                "rotateX(" + flipX + "deg)" +
+                "translate(" + forsyvningX + "px," + forsyvningY + "px)";
+
+
+             bokstav4.style.transform =
+                "rotateY(" + flipY2 + "deg)" +
+                "rotateX(" + flipX2 + "deg)" +
+                "translate(" + forsyvningX2 + "px," + forsyvningY2 + "px)";
+            bokstav2.style.transform =
+                "rotateY(" + flipY2 + "deg)" +
+                "rotateX(" + flipX2 + "deg)" +
+                "translate(" + forsyvningX2 + "px," + forsyvningY2 + "px)";
+
+        }
+
+        anus.onmousemove = dynoLogo;
+
+    </script>
+
+
+</body>
+</html>
