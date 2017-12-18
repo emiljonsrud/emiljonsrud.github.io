@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG</title>
+    <style>
+
+        body {
+            margin: 0;
+        }
+        #mySVG {
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+            transition: 0.2s;
+        }
+        circle {
+            r: 50;
+            stroke: black;
+            stroke-width: 3;
+            fill: none;
+        }
+        #frekvens {
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="range" value="20" id="frekvens">
+    <svg id="mySVG">
+    </svg>
+
+    <script>
+
+        var mySVG = document.getElementById("mySVG");
+        var frekvens = document.getElementById("frekvens");
+
+        frekvens.oninput = endreFrekvens;
+        function endreFrekvens() {
+            console.log(frekvens.value);
+            FR = frekvens.value/100*400+5
+        }
+//easterEGG
+        var FR = 100;
+
+        function tegnSirkel(klikk) {
+            var x = klikk.clientX;
+            var y = klikk.clientY;
+            var sirkel = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+
+            mySVG.style.backgroundColor = `hsla(${Math.random()*360}, 100%, 50%, 0.4)`;
+            sirkel.setAttribute("cx", x);
+            sirkel.setAttribute("cy", y);
+
+            mySVG.appendChild(sirkel);
+
+            var keyframes = [
+                {r: 40, opacity: 1},
+                {r: 300, opacity: 0.2},
+                {r: 400, opacity: 0},
+            ];
+            var settings = {
+                duration: FR
+            };
+
+            var animasjon = sirkel.animate(keyframes, settings);
+
+
+            animasjon.onfinish = function () {
+                mySVG.removeChild(sirkel);
+            }
+        }
+
+        mySVG.onmousemove = tegnSirkel;
+
+
+    </script>
+
+</body>
+</html>
